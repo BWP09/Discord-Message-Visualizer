@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Discord Message</title>
+        <link rel="stylesheet" href="/resources/style.css">
+    </head>
+    <body>
+        {% for message in messages %}
+            {{message | safe}}
+        {% endfor %}
+
+        <div id="image-modal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modal-image">
+            <div id="caption"></div>
+        </div>
+        
+        <div class="controls">
+            <div class="controls-item">
+                <input type="checkbox" id="toggleContent">
+                <label for="toggleContent">Hide Content</label>
+            </div>
+
+            <div class="controls-item">
+                <input type="checkbox" id="toggleImages">
+                <label for="toggleImages">Hide Images</label>
+            </div>
+
+            <div class="controls-item">
+                <input type="checkbox" id="toggleReactions">
+                <label for="toggleReactions">Hide Reactions</label>
+            </div>
+
+            <div class="controls-item">
+                <input type="checkbox" id="toggleTimestamps">
+                <label for="toggleTimestamps">Hide Timestamps</label>
+            </div>
+
+            <div class="controls-item">
+                <input type="checkbox" id="toggleUsernames">
+                <label for="toggleUsernames">Hide Usernames</label>
+            </div>
+
+            <div class="controls-item">
+                <input type="checkbox" id="toggleAvatars">
+                <label for="toggleAvatars">Hide Avatars</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="toggleIDs">
+                <label for="toggleIDs">Hide IDs</label>
+            </div>
+        </div>
+
+        <script src="/resources/modal.js"></script>
+        <script src="/resources/visible.js"></script>
+
+        <script>
+            document.getElementById('toggleIDs').checked = true;
+
+            document.querySelectorAll('.message-footer').forEach(function(image) {
+                image.style.display = 'none';
+            }); //, this
+        </script>
+    </body>
+</html>

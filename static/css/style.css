@@ -1,0 +1,213 @@
+body {
+    background-color: #36393f;
+    color: #dcddde;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.discord-message {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.message-content {
+    flex: 1;
+}
+
+.message-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.username {
+    font-weight: bold;
+    color: #bec3d5;
+    margin-right: 10px;
+}
+
+.timestamp {
+    font-size: 12px;
+    color: #83888f;
+}
+
+.message-body {
+    font-size: 14px;
+}
+
+.message-image {
+    max-width: 400px;
+    max-height: 150px;
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+
+    cursor: pointer;
+}
+
+.message-footer {
+    margin-top: 10px; /* Space above the footer text */
+    color: #74787e; /* Text color */
+    font-size: 10px; /* Adjust font size */
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    padding-top: 60px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 3px;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+
+/* Add Animation */
+.modal-content, #caption { 
+    animation-name: zoom;
+    animation-duration: 0.4s;
+}
+
+@keyframes zoom {
+    from {
+        transform:scale(0.75)
+        
+    } 
+    to {
+        transform:scale(1)
+    }
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.controls {
+    position: fixed; /* Fixes the container in place */
+    bottom: 20px; /* Distance from the bottom of the viewport */
+    right: 20px; /* Distance from the right edge of the viewport */
+    background-color: #2f3136; /* Match the background color with your theme */
+    padding: 10px; /* Add padding around the controls */
+    border-radius: 5px; /* Rounded corners for better appearance */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a shadow for better visibility */
+    z-index: 1; /* Ensure it stays on top of other content */
+    color: #dcddde; /* Match the text color with your theme */
+    font-size: 14px; /* Adjust font size if needed */
+}
+
+.controls-item {
+    margin-bottom: 5px;
+}
+
+.controls label {
+    margin-left: 3px; /* Space between checkbox and label text */
+}
+
+.call {
+    color: #d15ba6;
+    margin: -2px;
+}
+
+a {
+    color: #1d9bf0; /* Link color (Discord blue) */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Optional: make the link bold */
+    transition: color 0.2s ease, text-decoration 0.2s ease; /* Smooth transition effect */
+}
+
+a:hover,
+a:focus {
+    color: #1a8cd8; /* Slightly darker blue on hover/focus */
+    text-decoration: underline; /* Underline on hover/focus for better visibility */
+}
+
+/* Optional: Styling for visited links */
+a:visited {
+    color: #1d9bf0; /* Keep the link color the same after visiting */
+}
+
+/* @mention styling */
+.mention {
+    color: #7289da; /* Mention color (Discord’s mention color) */
+    font-weight: bold; /* Optional: make the mention bold */
+    background-color: #2f3136; /* Optional: background color for contrast */
+    padding: 0 4px; /* Padding for a bit of spacing around the mention */
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 3px; /* Rounded corners for a subtle background */
+    text-decoration: none; /* No underline for mentions */
+}
+
+/* Optional: Add hover effect */
+.mention:hover {
+    color: #99aab5; /* Slightly lighter color on hover */
+    background-color: #4f545c; /* Change background color on hover */
+}
+
+/* Reactions container */
+.reactions {
+    display: flex;
+    align-items: center;
+    margin-top: 10px; /* Space above reactions */
+}
+
+/* Individual reaction */
+.reaction {
+    font-size: 18px; /* Size of the emoji */
+    margin: 0 2px; /* Space between reactions */
+    padding-left: 5px;
+    padding-right: 4px;
+    padding-top: 1px;
+    padding-bottom: 4px;
+    background-color: #26292e;
+    border-radius: 5px;
+}

@@ -1,0 +1,33 @@
+<div class="discord-message">
+    <img src="{{avatar_img}}" alt="Avatar" class="avatar">
+    <div class="message-content">
+        <div class="message-header">
+            <span class="username">{{username}}</span>
+            <span class="timestamp">{{timestamp}}</span>
+        </div>
+
+        <div class="message-body">
+            {% if content %}
+                {% for line in content.split("\n") %}
+                    {{line | safe}}<br>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        {% for img, alt in images.items() %}
+            <img src="{{img}}" alt="{{alt}}" class="message-image">
+        {% endfor %}
+
+        {% if reactions %}
+            <div class="reactions">
+                {% for emoji, count in reactions.items() %}
+                    <span class="reaction">{{emoji}} {{count}}&nbsp;</span>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <div class="message-footer">
+            {{footer}}
+        </div>
+    </div>
+</div>
