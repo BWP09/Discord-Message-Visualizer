@@ -9,7 +9,7 @@ with open(f"{app.root_path}/discord_data/{sys.argv[1]}/scrape.json", "r") as f:
     scrape = json.load(f)
 
 with open(f"{app.root_path}/discord_data/{sys.argv[1]}/info.json", "r") as f:
-    info = json.load(f)
+    info: dict = json.load(f)
 
 
 def links(text: str):
@@ -70,7 +70,7 @@ def index():
         messages.append(
             html.fl_render(
                 "_message",
-                avatar_img = info["avatars"][message["author_username"]],
+                avatar_img = info["avatars"].get(message["author_username"], info["avatar_default"]),
                 username = message["author_username"],
                 timestamp = message["timestamp"],
                 content = content,
